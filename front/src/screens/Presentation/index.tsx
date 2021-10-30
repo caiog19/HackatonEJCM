@@ -1,9 +1,8 @@
 import React from 'react';
 import { View } from 'react-native';
-import { Title, Logo } from './style';
+import { Title, Logo, DogsImage } from './style';
 import PurpleButton from '../../components/PurpleButton';
 import { useNavigation } from '@react-navigation/native';
-import Introduction from '../Introduction';
 
 export default function Presentation(){
 
@@ -15,8 +14,14 @@ export default function Presentation(){
                 <Logo source={require('../../../assets/logo.png')}/>
 
                 <Title>Seu novo pet está esperando por você</Title>
+            <View style={{marginTop:"10%"}}>
 
+            
                 <PurpleButton title='Avançar' handleOnPress={() => navigation.navigate('Introduction')}></PurpleButton>
+            </View>
+            <DogsImage source={require('../../../assets/prelogin.png')} />
+            
+
 
             </View>
 
