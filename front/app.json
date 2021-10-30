@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "MUDZ",
-    "slug": "MUDZ",
+    "name": "hackaton",
+    "slug": "hackaton",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
