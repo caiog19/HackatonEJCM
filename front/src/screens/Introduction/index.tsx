@@ -21,7 +21,7 @@ export default function Introduction(){
                     </View>
 
             <View style={{marginTop:'8%'}}>
-                <PurpleButton title="Cadastrar" handleOnPress={()=> navigation.navigate('Presentation')}></PurpleButton>
+                <PurpleButton title="Cadastrar" handleOnPress={()=> navigation.navigate('Register')}></PurpleButton>
             </View>
             
 
