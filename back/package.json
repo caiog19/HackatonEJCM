@@ -1,5 +1,5 @@
 {
-  "name": "backend-mudz",
+  "name": "backend-hackaton",
   "version": "0.1.0",
   "description": "",
   "main": "index.js",
@@ -8,13 +8,19 @@
     "dev": "node-dev --no-notify src/app.js",
     "migrate": "node src/database/migrate.js",
     "seed": "node src/database/seeders/seeder.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "keys": "node src/config/generateRSAKeys.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
-    "sequelize": "^6.8.0"
+    "express-validator": "^6.13.0",
+    "multer": "^1.4.3",
+    "node-dev": "^7.1.0",
+    "sequelize": "^6.8.0",
+    "sqlite3": "^5.0.2"
   }
 }

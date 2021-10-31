@@ -96,6 +96,7 @@ export default function Register() {
                 <View style={{marginTop:'10%'}}>
                     <PurpleButton title='Avançar' handleOnPress={() => navigation.navigate('Register2')}></PurpleButton>
                 </View>
+                
                 <Patas source={require('../../../assets/patas.png')}></Patas>
             </View>
 

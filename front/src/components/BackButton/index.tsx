@@ -7,7 +7,7 @@ import { ViewBackButton } from "./style";
 export default function BackButton() {
     const navigation = useNavigation();
     return (
-        <View style={{marginTop:'5%', marginLeft:'5%'}}>
+        <View style={{marginTop:'5%', marginLeft:'5%', position:'fixed'}}>
         <ViewBackButton> 
         
         <AntDesign name="back" size={24} color="#57429D" onPress={() => navigation.goBack()}/>

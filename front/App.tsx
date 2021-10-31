@@ -8,6 +8,8 @@ import Register from './src/screens/Register';
 import Register2 from './src/screens/Register2'
 import { useFonts } from 'expo-font';
 import PurpleButton from './src/components/PurpleButton';
+import Informations from './src/screens/Informations';
+import TabBar from './src/components/TabBar';
 
 const Stack = createStackNavigator();
 
@@ -22,12 +24,13 @@ export default function App() {
       <Stack.Navigator screenOptions={{
           headerShown: false
          }}>
-           
+      <Stack.Screen name = "Informations" component = {Informations}/>     
     <Stack.Screen name = "Presentation" component={Presentation}/>
     <Stack.Screen name = "Introduction" component={Introduction}/>
     <Stack.Screen name = "Login" component = {Login}/>
     <Stack.Screen name = "Register" component = {Register}/>
-    <Stack.Screen name = "Register2" component = {Register2}/>      
+    <Stack.Screen name = "Register2" component = {Register2}/>  
+    <Stack.Screen name = 'TabBar' component = {TabBar}/>    
     
       </Stack.Navigator>
 
