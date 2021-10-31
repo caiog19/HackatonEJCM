@@ -24,13 +24,15 @@ export default function App() {
       <Stack.Navigator screenOptions={{
           headerShown: false
          }}>
+           
+           <Stack.Screen name = "Informations" component = {Informations}/>
       <Stack.Screen name = "av" component = {Avaliacao}/>
     <Stack.Screen name = "Presentation" component={Presentation}/>
     <Stack.Screen name = "Introduction" component={Introduction}/>
     <Stack.Screen name = "Login" component = {Login}/>
     <Stack.Screen name = "Register" component = {Register}/>
     <Stack.Screen name = "Register2" component = {Register2}/>  
-    <Stack.Screen name = "Informations" component = {Informations}/>
+    
                   
       </Stack.Navigator>
 
