@@ -34,7 +34,7 @@ const create = async(req,res) => {
         const {user_id} = req.params;
         const {animal_id} = req.params;
         const user = await User.findByPk(user_id);
-        const animal = await User.findByPk(animal_id);
+        const animal = await Animal.findByPk(animal_id);
         
         validationResult(req).throw(); //validação
 		const newCommentData = {

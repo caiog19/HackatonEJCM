@@ -52,6 +52,7 @@ const create = async(req,res) => {
 const update = async(req,res) => {
     const {id} = req.params;
     try {
+        validationResult(req).throw(); //validação
         const [updated] = await User.update(req.body, {where: {id: id}});
         if(updated) {
             const user = await User.findByPk(id);
@@ -59,7 +60,7 @@ const update = async(req,res) => {
         } 
         throw new Error();
     }catch(err){
-        return res.status(500).json("Usuário não encontrado");
+        return res.status(500).json(err);
     }
 };
 
