@@ -64,9 +64,6 @@ const update = async(req,res) => {
 const destroy = async(req,res) => {
     const {id} = req.params;
     try {
-        const rating = await Rating.findByPk(id);
-        await rating.setUser(null);
-        // await Cart.destroy({where: {id: rating.CartId}});
         const deleted = await Rating.destroy({where: {id: id}});
         if(deleted) {
             return res.status(200).json("Avaliação deletada com sucesso.");

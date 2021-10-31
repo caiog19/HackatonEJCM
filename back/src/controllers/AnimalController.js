@@ -6,6 +6,7 @@ const Donation = require('../models/Donation');
 const Comment = require('../models/Comment');
 const Photo = require('../models/Photo');
 const {validationResult} = require('express-validator');
+const { Op } = require("sequelize");
 
 // Criação da Rota que retorna todos os animais do banco de dados
 const index = async(req,res) => {
@@ -30,12 +31,11 @@ const show = async(req,res) => {
 
 // Criação da Rota que retorna os animais filtrados por categoria
 const search = async(req, res) => {
-    const { term } = req.body;
+    const term = req.body.especie;
     try {
-        const results = await Service.findAll ({
-            where: { especie: {[Op.eq]: term}
-        }
-        });
+        const results = await Animal.findAll({
+            where: {especie: {[Op.like]: '%' + term + '%'}
+    }});
         return res.status(200).json(results);
     } catch (e) {
 		return res.status(500).json('Nenhum Resultado foi encontrado.');
@@ -69,6 +69,7 @@ const create = async(req,res) => {
 const update = async(req,res) => {
     const {id} = req.params;
     try {
+        validationResult(req).throw(); //validação
         if(req.file){
             console.log(req.file)
             req.body.foto = process.env.APP_URL + "/uploads/" + req.file.filename
@@ -83,7 +84,7 @@ const update = async(req,res) => {
         } 
         throw new Error();
     }catch(err){
-        return res.status(500).json("Animal não encontrado");
+        return res.status(500).json(err);
     }
 };
 
@@ -91,8 +92,6 @@ const update = async(req,res) => {
 const destroy = async(req,res) => {
     const {id} = req.params;
     try {
-        // const animal = await Animal.findByPk(id);
-        // await Cart.destroy({where: {id: animal.CartId}});
         const deleted = await Animal.destroy({where: {id: id}});
         if(deleted) {
             return res.status(200).json("Animal deletado com sucesso.");

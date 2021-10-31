@@ -63,15 +63,15 @@ router.get('/rating',RatingController.index);
 router.get('/rating/:id',RatingController.show);
 router.post('/rating/user/:user_id', validator.validationRating('create'), RatingController.create);
 router.put('/rating/:id', validator.validationRating('update'), RatingController.update);
-router.delete('/rating/:id/user/:user_id', RatingController.destroy);
+router.delete('/rating/:id', RatingController.destroy);
 
 
 // Rotas para CRUD de Doação
-router.get('/donation/user/:user_id',DonationController.index);
-router.get('/donation/user/:user_id',DonationController.show);
-router.post('/donation/user/:user_id',DonationController.create);
-router.put('/donation/animal/:animal_id/user/:user_id',DonationController.update);
-router.delete('/donation/animal/:animal_id/user/:user_id',DonationController.destroy);
+router.get('/donation/',DonationController.index);
+router.get('/donation/:id',DonationController.show);
+router.post('/donation/user/:user_id/animal/:animal_id',DonationController.create);
+router.put('/donation/:id',DonationController.update);
+router.delete('/donation/:id',DonationController.destroy);
 
 
 
