@@ -3,7 +3,7 @@ import styled from "styled-components/native";
 export const BackGroundHome = styled.View `
 background-color:#EEEEEE ;
 width: 100%;
-height: 110%;
+height: 90%;
 
 `
 
@@ -12,6 +12,8 @@ export const Cabecalho = styled.View `
 
 width: 100%;
 height: 10%;
+
+display: inline-block;
 
 `
 
@@ -37,7 +39,7 @@ border-radius: 10px;
 margin-left: 45%;
 `
 
-export const Cachorros = styled.View `
+export const Cachorros = styled.TouchableOpacity `
 background-color: #C4C4C4;
 width: 80%;
 height: 140px;
@@ -47,7 +49,7 @@ margin-top: 20%;
 
 `
 
-export const Gatos = styled.View `
+export const Gatos = styled.TouchableOpacity `
 background-color: #C4C4C4 ;
 width: 80%;
 height: 140px;
@@ -59,7 +61,7 @@ margin-top: 5%;
 `
 
 
-export const Roedores= styled.View `
+export const Roedores= styled.TouchableOpacity `
 background-color: #C4C4C4;
 height: 140px;
 width: 80%;
@@ -83,15 +85,15 @@ height: 8%;
 `
 
 export const Logo = styled.Image`
-margin-left:40%;
-margin-top: 7%;
+margin-left:38%;
+margin-top:8%;
 height: 60px;
 width:100px;
 
 `
 export const Dog = styled.Image`
 margin-left:-40%;
-margin-top: -18%;
+margin-top: -72%;
 height: 170px;
 width:130px;
 
@@ -99,7 +101,7 @@ width:130px;
 `
 export const Cat = styled.Image`
 margin-left:70%;
-margin-top: -11%;
+margin-top: -65%;
 height: 160px;
 width:110px;
 
@@ -107,9 +109,29 @@ width:110px;
 `
 export const Pig = styled.Image`
 margin-left:-90%;
-margin-top: 14%;
+margin-top: -40%;
 height: 150px;
 width:180px;
 
 
+`
+
+export const Text1 = styled.Text`
+font-size: 1.5em;
+margin-top:35%;
+margin-left: 40%;
+color:#FFFFFF;
+`
+
+export const Text2 = styled.Text`
+font-size: 1.5em;
+margin-top:35%;
+margin-left: 30%;
+color:#FFFFFF;`
+
+export const Text3 = styled.Text`
+font-size: 1.5em;
+margin-top:35%;
+margin-left: 20%;
+color:#FFFFFF;
 `
