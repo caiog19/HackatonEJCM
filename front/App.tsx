@@ -10,7 +10,7 @@ import Introduction from './src/screens/Introduction';
 import Login from './src/screens/Login';
 import Register from './src/screens/Register';
 import Register2 from './src/screens/Register2';
-
+import Avaliacao from './src/screens/Avaliacao';
 const Stack = createStackNavigator();
 
 export default function App() {
@@ -24,7 +24,7 @@ export default function App() {
       <Stack.Navigator screenOptions={{
           headerShown: false
          }}>
-           
+      <Stack.Screen name = "av" component = {Avaliacao}/>
     <Stack.Screen name = "Presentation" component={Presentation}/>
     <Stack.Screen name = "Introduction" component={Introduction}/>
     <Stack.Screen name = "Login" component = {Login}/>
