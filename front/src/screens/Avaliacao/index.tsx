@@ -18,7 +18,7 @@ import {Background,
         Logo,
         Corpo,
         Tititulo1,
-        BotoesAvaliação,
+        BotoesAvaliacao,
         TituloComentario,
         Comentario,
         BotaoAvaliar,
@@ -58,7 +58,7 @@ export default function Avaliacao(){
             </Cabecalho>
             <Corpo>
                 <Tititulo1> Como você avalia os nossos serviços?</Tititulo1>
-                <BotoesAvaliação>
+                <BotoesAvaliacao>
                    <RadioForm radio_props={avali}
                    initial={-1}
                    onPress={(value) => {}}
@@ -67,7 +67,7 @@ export default function Avaliacao(){
                    labelHorizontal={false}
                    buttonColor={'#C4C4C4'}
                    />
-                </BotoesAvaliação>
+                </BotoesAvaliacao>
                 <TituloComentario>Comentário</TituloComentario>
                 <Comentario></Comentario>
                 <BotaoAvaliar>Avaliar</BotaoAvaliar>
