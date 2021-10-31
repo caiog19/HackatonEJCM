@@ -6,28 +6,28 @@ const CommentController = require('../controllers/CommentController');
 const RatingController = require('../controllers/RatingController');
 const DonationController = require('../controllers/DonationController');
 const validator = require('../config/validator');
-//const path = require('path');
-//const multer = require('multer');
-//const storage = require("../config/files");
+const path = require('path');
+const multer = require('multer');
+const storage = require("../config/files");
 
 
 // Criando a instância router
 const router = Router();
 
-// Criando instância para upload de fotos
-//const upload = multer({ storage: storage,
-//	fileFilter: function (req, file, cb) {
-//	        const ext = path.extname(file.originalname);
-//	        if(ext !== '.png' && ext !== '.jpg' && ext !== '.jpeg') {
-//	            return cb(new Error('Extensão de arquivo não suportada!'), false);
-//	        }
-//	        cb(null, true);
-//	    },
-//	    limits:{
-//	        fileSize: 2048 * 2048
-//	    }
+//Criando instância para upload de fotos
+const upload = multer({ storage: storage,
+	fileFilter: function (req, file, cb) {
+	        const ext = path.extname(file.originalname);
+	        if(ext !== '.png' && ext !== '.jpg' && ext !== '.jpeg') {
+	            return cb(new Error('Extensão de arquivo não suportada!'), false);
+	        }
+	        cb(null, true);
+	    },
+	    limits:{
+	        fileSize: 2048 * 2048
+	    }
 
-// });
+});
  
 // Criando instância para upload de múltiplas fotos 
 //const allUploads = upload.fields([{ name: 'photo', maxCount: 6 }]);
@@ -48,6 +48,10 @@ router.get('/search',AnimalController.search); //procura os servicos pelo body k
 router.post('/animal', validator.validationAnimal('create'), AnimalController.create);
 router.put('/animal/:id', validator.validationAnimal('update'), AnimalController.update); 
 router.delete('/animal/:id', AnimalController.destroy); 
+
+// Rotas para adicionar e remover fotos de um animal
+router.post('/animal/:id/file', upload.single('photo'), AnimalController.addPhoto);
+router.delete('/animal/photo/:id', AnimalController.removePhoto);
 
 
 // Rotas para CRUD de Comment

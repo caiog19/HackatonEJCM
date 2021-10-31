@@ -5,6 +5,8 @@ const Animal = require('../models/Animal');
 const Donation = require('../models/Donation');
 const Comment = require('../models/Comment');
 const Photo = require('../models/Photo');
+const fsPromise = require('fs').promises;
+const path = require('path');
 const {validationResult} = require('express-validator');
 const { Op } = require("sequelize");
 
@@ -56,7 +58,6 @@ const create = async(req,res) => {
             porte: req.body.porte,
             rastreador: req.body.rastreador,
             raca: req.body.raca,
-            foto: req.body.foto
 		}
 		const animal = await Animal.create(newAnimalData);
 		return res.status(201).json({animal: animal});
@@ -70,13 +71,6 @@ const update = async(req,res) => {
     const {id} = req.params;
     try {
         validationResult(req).throw(); //validação
-        if(req.file){
-            console.log(req.file)
-            req.body.foto = process.env.APP_URL + "/uploads/" + req.file.filename
-        }
-        else{
-            req.body.foto = null
-        }
         const [updated] = await Animal.update(req.body, {where: {id: id}});
         if(updated) {
             const animal = await Animal.findByPk(id);
@@ -102,6 +96,41 @@ const destroy = async(req,res) => {
     }
 };
 
+// Criação da Rota que adiciona fotos a um serviço específico do banco de dados
+const addPhoto = async(req, res) => {
+	try {
+		const {id} = req.params;
+        const animal = await Animal.findByPk(id, {include:{model: Photo}});
+		if(req.file){
+				const path = process.env.APP_URL + "/uploads/" + req.file.filename;
+				const photo = await Photo.create({
+					path: path,
+				});
+				await animal.addPhoto(photo);
+            //await animal.reload();
+		}
+        const animalUpdated = await Animal.findByPk(id, {include:{model: Photo}});
+		return res.status(200).json(animalUpdated);
+	} catch (e) {
+		return res.status(500).json({e});
+	}
+};
+
+// Criação da Rota que remove fotos de um serviço específico do banco de dados
+const removePhoto = async(req, res) => {
+	try {
+        const {id} = req.params;
+		const photo  = await Photo.findByPk(id);
+		const pathDb = photo.path.split("/").slice(-1)[0];
+		await fsPromise.unlink(path.join(__dirname, "..", "..", "uploads", pathDb));
+		await photo.destroy();
+		return res.status(200).json("Foto deletada com sucesso");
+	} catch (e) {
+		return res.status(500).json(e + "!");
+	}
+};
+
+
 // Exportação da CRUD criada acima para routes
 module.exports = {
     index,
@@ -109,5 +138,7 @@ module.exports = {
     search,
     create,
     update,
-    destroy
+    destroy,
+    addPhoto,
+    removePhoto
 };

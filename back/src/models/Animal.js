@@ -41,10 +41,6 @@ const Animal = sequelize.define('Animal', {
         allowNull: false
     },
 
-    foto: {
-        type: DataTypes.STRING
-    },
-
     descricao: {
         type: DataTypes.STRING,
         allowNull: false
@@ -58,7 +54,7 @@ const Animal = sequelize.define('Animal', {
 // Definição das relações
 Animal.associate = function(models){
     Animal.hasOne(models.Donation);
-    Animal.hasOne(models.Photo);
+    Animal.hasMany(models.Photo);
     Animal.hasMany(models.Comment);
 }
 
