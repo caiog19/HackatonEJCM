@@ -27,6 +27,8 @@ export default function App() {
          }}>
     
     <Stack.Screen name = "Avaliacao" component={Avaliacao}/>
+     <Stack.Screen name = "Presentation" component={Presentation}/>
+    <Stack.Screen name = "Introduction" component={Introduction}/>
     
       </Stack.Navigator>
 
