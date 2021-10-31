@@ -29,7 +29,7 @@ margin-top:20%;
 margin-right: 10%;
 margin-left: 15%;
 `
-export const BotoesAvaliação  = styled.View`
+export const BotoesAvaliacao  = styled.View`
 margin-top: 8%;
 margin-bottom: 8%;
 
