@@ -68,12 +68,11 @@ export default function Login(){
 
             <View style={{marginTop:'20%'}}>
 
-                <PurpleButton title='Entrar' handleOnPress={()=>navigation.navigate('Presentation')}></PurpleButton>
+                <PurpleButton title={'Entrar'} handleOnPress={()=>navigation.navigate('Informations')}></PurpleButton>
 
             </View>
 
             <Patas source={require('../../../assets/patas.png')}></Patas>
-
 
         </View>
         </View>

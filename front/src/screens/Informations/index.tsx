@@ -1,14 +1,16 @@
 import React from 'react'
 import { View, ScrollView } from 'react-native'
 import { Logo } from '../Login/style'
-import { BackGroundText, Title, Text, Container, Text2, Maps } from './style'
+import { Title, Text, Container, Text2, Maps } from './style'
 import BackButton from '../../components/BackButton'
+
 export default function Informations() {
 
     return (
         <View>
-
+            
             <BackButton />
+            
 
             <ScrollView>
             <View style={{ alignItems: 'center' }}>
@@ -60,5 +62,5 @@ export default function Informations() {
             </ScrollView>
 
         </View>
-    )
+    );
 }
