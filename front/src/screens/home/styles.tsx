@@ -1,5 +1,5 @@
 import styled from "styled-components/native";
-
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 export const BackGroundHome = styled.View `
 background-color:#EEEEEE ;
 width: 100%;
@@ -9,13 +9,31 @@ height: 90%;
 
 
 export const Cabecalho = styled.View `
-
 width: 100%;
 height: 10%;
-
 display: inline-block;
 
 `
+export const BackIcons = styled.View `
+padding-left: ${wp('3%')};
+padding-right: ${wp('3%')};
+width: ${wp('100%')};
+height: ${hp('9%')};
+flex: 1;
+align-items: center;
+justify-content: space-between;
+flex-direction: row;
+
+`
+
+export const Circle = styled.TouchableOpacity`
+max-width: 40px;
+height: 40px;
+flex: 1;
+align-items: center;
+justify-content: center;
+background-color:#57429D;
+border-radius: 50%;`
 
 export const Divcor1 = styled.View`
 height: 100%;
@@ -86,7 +104,7 @@ height: 8%;
 
 export const Logo = styled.Image`
 margin-left:38%;
-margin-top:8%;
+margin-top:-4%;
 height: 60px;
 width:100px;
 
