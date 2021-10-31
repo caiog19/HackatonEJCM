@@ -29,7 +29,7 @@ import {Background,
 
 } from './styles';
 
-var avali =[
+const avali =[
     {label: '1', value:0},
     {label: '2', value:1},
     {label: '3', value:2},
@@ -58,14 +58,15 @@ export default function Avaliacao(){
             </Cabecalho>
             <Corpo>
                 <Tititulo1> Como você avalia os nossos serviços?</Tititulo1>
-                <BotoesAvaliação>
+                <BotoesAvaliacao>
                    <RadioForm radio_props={avali}
                    initial={-1}
                    onPress={(value) => {}}
-                   labelStyle={{fontSize:25, color:'#57429D'}}
+                   labelStyle={{fontSize:25, color:'#57429D', fontFamily:'Capriola'}}
                    formHorizontal={true}
                    labelHorizontal={false}
                    buttonColor={'#C4C4C4'}
+                   
                    />
                 </BotoesAvaliacao>
                 <TituloComentario>Comentário</TituloComentario>
