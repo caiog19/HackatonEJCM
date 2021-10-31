@@ -6,7 +6,7 @@ export const BackGroundHome = styled.View `
     background-color:#57429D;
     width: ${wp('100%')};
     height: ${hp('100%')};
-    font-family: Signika;`
+    font-family: 'Capriola';`
 
 export const Back1 = styled.View `
 background-color:#57429D;
@@ -20,7 +20,8 @@ export const Nome = styled.Text `
     color: #ffff;
     font-size: 2em;
     font-weight: 500;
-    margin-left:5%;`
+    margin-left:5%;
+    font-family: 'Capriola';`
 
 export const Back2 = styled.View `
     background-color:#ffff;
@@ -57,7 +58,8 @@ margin-bottom:${hp('0%')};
 export const TextButton = styled.Text `
     color: #ffff;
     font-size: 2em;
-    font-weight: 500;`
+    font-weight: 500;
+    font-family: 'Capriola';`
 
 export const ImgPet = styled.Image`
     width: ${wp('58%')};
@@ -103,6 +105,7 @@ export const Info = styled.Text `
     color: #000;
     font-size: 1.3em;
     font-weight: 400;
+    font-family: 'Capriola';
     `
     
 export const Info1 = styled.Text `
@@ -110,6 +113,7 @@ export const Info1 = styled.Text `
     color: #000;
     font-size: 1.3em;
     font-weight: 400;
+    font-family: 'Capriola';
     `
 
 
