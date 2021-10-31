@@ -34,11 +34,12 @@ const create = async(req,res) => {
         const {user_id} = req.params;
         const {animal_id} = req.params;
         const user = await User.findByPk(user_id);
-        const animal = await User.findByPk(animal_id);
+        const animal = await Animal.findByPk(animal_id);
 		const newDonationData = {}
 		const donation = await Donation.create(newDonationData);
         await donation.setUser(user);
         await donation.setAnimal(animal);
+        await Animal.destroy({where: {id: donation.AnimalId}});
 		return res.status(201).json({donation: donation});
 	} catch (e) {
 		return res.status(500).json({err: e});
@@ -68,7 +69,6 @@ const destroy = async(req,res) => {
         await Animal.destroy({where: {id: donation.AnimalId}});
         await donation.setUser(null);
         await donation.setAnimal(null);
-        const deleted = await Donation.destroy({where: {id: id}});
         if(deleted) {
             return res.status(200).json("Doação deletada com sucesso.");
         }

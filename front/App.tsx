@@ -2,13 +2,14 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Presentation from './src/screens/Presentation';
-import Introduction from './src/screens/Introduction';
-import Login from './src/screens/Login';
-import Register from './src/screens/Register';
-import Register2 from './src/screens/Register2'
+import Home from './src/screens/home';
 import { useFonts } from 'expo-font';
 import PurpleButton from './src/components/PurpleButton';
 import Informations from './src/screens/Informations';
+import Introduction from './src/screens/Introduction';
+import Login from './src/screens/Login';
+import Register from './src/screens/Register';
+import Register2 from './src/screens/Register2';
 
 const Stack = createStackNavigator();
 
