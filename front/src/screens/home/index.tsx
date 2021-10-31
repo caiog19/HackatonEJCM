@@ -7,7 +7,15 @@ import {Cabecalho,
         Cachorros,
         Gatos,
         Roedores,
-        BackGroundHome
+        BackGroundHome, 
+        Divcor1,
+        Divcor2,
+        Divcor3,
+        Logo,
+        Dog,
+        Cat,
+        Pig
+       
 
 } from './styles';
 
@@ -18,17 +26,27 @@ return(
 
     <BackGroundHome>
         <Cabecalho>
-
+        
+        <Logo source={require('../../../assets/smallerLogo.png')}></Logo>
         </Cabecalho>
         <Corpo>
+            
             <Cachorros>
+                <Divcor1>
+                <Dog source={require('../../../assets/dog.png')}></Dog>
 
+                </Divcor1>
+                
             </Cachorros>
             <Gatos>
-
+                <Divcor2>
+                <Cat source={require('../../../assets/cat.png')}></Cat>
+                </Divcor2>
             </Gatos>
             <Roedores>
-
+                <Divcor3>
+                <Pig source={require('../../../assets/pig.png')}></Pig>
+                </Divcor3>
             </Roedores>
         </Corpo>
         <Navbar>
