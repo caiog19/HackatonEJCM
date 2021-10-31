@@ -17,11 +17,11 @@ export default function Introduction(){
 
 
                 <View style={{marginTop:'15%'}}>
-                <PurpleButton title="Entrar" handleOnPress={()=> navigation.navigate('Login')}></PurpleButton>
+                <PurpleButton title={"Entrar"} handleOnPress={()=> navigation.navigate('Login')}></PurpleButton>
                     </View>
 
             <View style={{marginTop:'8%'}}>
-                <PurpleButton title="Cadastrar" handleOnPress={()=> navigation.navigate('Register')}></PurpleButton>
+                <PurpleButton title={"Cadastrar"} handleOnPress={()=> navigation.navigate('Register')}></PurpleButton>
             </View>
             
 
