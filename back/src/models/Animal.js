@@ -1,5 +1,8 @@
 const DataTypes = require("sequelize");
 const sequelize = require("../config/sequelize");
+const Donation = require("./Donation");
+const Photo = require("./Photo");
+const Comment = require("./Comment");
 
 // Definição da Model de Usuário com os atributos
 const Animal = sequelize.define('Animal', {
@@ -23,11 +26,6 @@ const Animal = sequelize.define('Animal', {
         allowNull: false
     },
 
-    foto: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
-
     porte: {
         type: DataTypes.STRING,
         allowNull: false
@@ -43,6 +41,10 @@ const Animal = sequelize.define('Animal', {
         allowNull: false
     },
 
+    foto: {
+        type: DataTypes.STRING
+    },
+
     descricao: {
         type: DataTypes.STRING,
         allowNull: false
@@ -50,13 +52,14 @@ const Animal = sequelize.define('Animal', {
 },
 
 {
-    timestamps = false
+    timestamps : false
 });
 
 // Definição das relações
 Animal.associate = function(models){
-    Animal.hasOne(models.Donation)
-    Animal.hasMany(models.Comment)
+    Animal.hasOne(models.Donation);
+    Animal.hasOne(models.Photo);
+    Animal.hasMany(models.Comment);
 }
 
 module.exports = Animal;

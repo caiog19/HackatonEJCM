@@ -16,12 +16,12 @@ const Rating = sequelize.define('Rating', {
 },
 
 {
-    timestamps = false
+    timestamps : false
 });
 
 // Definição das relações
 Rating.associate = function(models){
-    Rating.belongsTo(models.User)
+    Rating.belongsTo(models.User);
 }
 
 module.exports = Rating;

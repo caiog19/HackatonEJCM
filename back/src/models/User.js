@@ -13,7 +13,7 @@ const User = sequelize.define('User', {
         allowNull: false
     },
 
-    endereço: {
+    bairro: {
         type: DataTypes.STRING,
         allowNull: false
     },
@@ -35,14 +35,14 @@ const User = sequelize.define('User', {
 },
 
 {
-    timestamps = false
+    timestamps : false
 });
 
 // Definição das relações
 User.associate = function(models){
-    User.hasOne(models.Rating)
-    User.hasMany(models.Donation)
-    User.hasMany(models.Comment)
+    User.hasOne(models.Rating);
+    User.hasMany(models.Donation);
+    User.hasMany(models.Comment);
 }
 
 module.exports = User;
