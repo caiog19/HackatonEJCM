@@ -18,9 +18,9 @@ export default function App() {
       <Stack.Navigator screenOptions={{
           headerShown: false
          }}>
-    
     <Stack.Screen name = "Presentation" component={Presentation}/>
     <Stack.Screen name = "Introduction" component={Introduction}/>
+    
       </Stack.Navigator>
 
 
