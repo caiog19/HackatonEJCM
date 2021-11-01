@@ -33,13 +33,18 @@ const show = async(req,res) => {
 const create = async(req,res) => {
 	try {
         validationResult(req).throw(); //validação
+        const { password } = req.body;
+		const hashAndSalt = Auth.generatePassword(password);
+		const salt = hashAndSalt.salt;
+		const hash = hashAndSalt.hash;
 		const newUserData = {
 			nome: req.body.nome,
 			cpf: req.body.cpf,
 			data_de_nascimento: req.body.data_de_nascimento,
             bairro: req.body.bairro,
             email: req.body.email,
-            senha: req.body.senha,
+            hash: hash,
+			salt: salt
 		}
 		const user = await User.create(newUserData);
 		return res.status(201).json({user: user});
