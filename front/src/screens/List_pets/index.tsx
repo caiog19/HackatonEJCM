@@ -5,19 +5,26 @@ import {BsGenderMale} from 'react-icons/Bs'
 import {BiLogOut} from 'react-icons/bi'
 import {AiFillStar} from 'react-icons/ai'
 import { useNavigation } from '@react-navigation/native';
+import BackButton from '../../components/BackButton';
 
-export default function Lista_pets() {
+export default function Lista_pets(props: any) {
+ 
+  const catego = props.route;
+
+  console.log(catego);
+
   const navigation = useNavigation();
   return (
     <BackGroundHome>
         <Back1>
           <BackIcons>
+
+            <BackButton/>
+
             <Circle onPress={() => navigation.navigate('av')}>
               <AiFillStar  color={"yellow"} size={'20px'}></AiFillStar>
             </Circle>
-            <TouchableOpacity onPress={() => navigation.navigate('Presentation')}>
-              <BiLogOut color={"#57429D"} size={'30px'}></BiLogOut>
-            </TouchableOpacity>
+
             </BackIcons>
           <BackLogo>
             <Logo  source={require('../../../assets/logo.png')}></Logo>

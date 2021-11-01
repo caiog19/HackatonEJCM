@@ -42,17 +42,18 @@ export default function App() {
       <Stack.Navigator screenOptions={{
           headerShown: false
          }}>
-         
+     <Stack.Screen name = "TabBar" component = {HomeTabs}/>    
     <Stack.Screen name = "Presentation" component={Presentation}/>
     <Stack.Screen name = "Introduction" component={Introduction}/>
     <Stack.Screen name = "Login" component = {Login}/>
     <Stack.Screen name = "Register" component = {Register}/>
     <Stack.Screen name = "Register2" component = {Register2}/>  
-    <Stack.Screen name = "TabBar" component = {HomeTabs}/>
+    
      <Stack.Screen name = "av" component = {Avaliacao}/>  
      <Stack.Screen name = "List" component = {Lista_pets}/> 
      <Stack.Screen name = "Info_pet" component = {Info_Pet}/>   
       <Stack.Screen name = "Fim" component = {Finaliza_Adocao}/>
+
       </Stack.Navigator>
 
 

@@ -8,7 +8,7 @@ import { useNavigation } from '@react-navigation/native';
 import { BackCard } from '../List_pets/style';
 
 export default function Finaliza_Adocao() {
-  
+  const navigation = useNavigation();
   return (
     <BackGroundHome>
         <Back1>
@@ -25,8 +25,8 @@ export default function Finaliza_Adocao() {
              <TextParabens>Parabéns, Ringo já está te esperando!! </TextParabens>
              <Area><Comunicado>Compareça na Rua dos Alfeneiros, 4 e retire seu pet.</Comunicado></Area>
             <Title1> Gostaria de realizar uma doação ?</Title1>
-            <Buttons><AiTwotoneAppstore color={"#fff"} size={'30px'}></AiTwotoneAppstore><Info>Pix</Info></Buttons>
-            <Buttons><Info>Não quero doar</Info></Buttons>
+            <Buttons onPress={() => navigation.navigate('Home')}> <AiTwotoneAppstore color={"#fff"} size={'30px'}></AiTwotoneAppstore><Info>Pix</Info></Buttons>
+            <Buttons onPress={() => navigation.navigate('Home')}><Info>Não quero doar</Info></Buttons>
         </BackCenter>
         
      

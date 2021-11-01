@@ -29,9 +29,19 @@ import {Cabecalho,
 
 } from './styles';
 
+
+
 export default function Home(){
 
     const navigation = useNavigation();
+
+    async function UseRole(role:string){
+        
+     
+        navigation.navigate('List', {role} )
+
+    }
+    
 return(
 
     <BackGroundHome>
@@ -49,7 +59,7 @@ return(
         </Cabecalho>
         <Corpo>
             
-            <Cachorros onPress={() => navigation.navigate('List')}>
+            <Cachorros onPress={() => UseRole('cao')}>
                 <Divcor1>
                     <Text1>Cães</Text1>
                 <Dog source={require('../../../assets/dog.png')}></Dog>
@@ -57,13 +67,13 @@ return(
                 </Divcor1>
                 
             </Cachorros>
-            <Gatos onPress={() => navigation.navigate('List')}>
+            <Gatos onPress={() => UseRole('gato')}>
                 <Divcor2>
                 <Text2>Gatos</Text2>
                 <Cat source={require('../../../assets/cat.png')}></Cat>
                 </Divcor2>
             </Gatos>
-            <Roedores onPress={() => navigation.navigate('List')}>
+            <Roedores onPress={() => UseRole('roedor')}>
                 <Divcor3>
                 <Text3>Roedores</Text3>
                 <Pig source={require('../../../assets/pig.png')}></Pig>

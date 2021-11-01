@@ -1,18 +1,18 @@
 import React from 'react'
-import { View, ScrollView } from 'react-native'
+import { View, ScrollView, StyleSheet, Dimensions } from 'react-native'
 import { Logo } from '../Login/style'
 import { Title, Text, Container, Text2, Maps } from './style'
 import BackButton from '../../components/BackButton'
+import MapView from 'react-native-maps';
 
 export default function Informations() {
 
     return (
-        <View>
-            
+        
+            <ScrollView>
+
             <BackButton />
             
-
-            <ScrollView>
             <View style={{ alignItems: 'center' }}>
 
                 <View >
@@ -39,6 +39,7 @@ export default function Informations() {
                     <Title> Localização </Title>
                 </View >
 
+
                 <View style={{ marginTop: '5%' }}>
                     <Text2> Endereço: Rua dos alfeneiros, 4</Text2>
                 </View>
@@ -59,8 +60,13 @@ export default function Informations() {
 
             </View>
 
+            
+            
+
+
             </ScrollView>
 
-        </View>
+       
     );
 }
+

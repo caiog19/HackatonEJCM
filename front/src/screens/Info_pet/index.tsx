@@ -7,7 +7,9 @@ import { useNavigation } from '@react-navigation/native';
 import PurpleButton from '../../components/PurpleButton';
 
 export default function Info_Pet() {
+ 
   const navigation = useNavigation();
+
   return (
     <BackGroundHome>
         <Back1>
