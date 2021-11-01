@@ -6,7 +6,7 @@ export const BackGroundHome = styled.View `
     background-color:#E5E5E5;
     width: ${wp('100%')};
     height: ${hp('100%')};
-    font-family: Signika;`
+    font-family: 'Capriola';`
 
 export const Back1 = styled.View `
     background-color:#e5e5e5;
@@ -53,7 +53,8 @@ export const Title= styled.Text `
     margin-left:${wp('20%')};
     margin-bottom:${hp('3%')};
     width: ${wp('60%')};
-    text-align:center;`
+    text-align:center;
+    font-family: 'Capriola';`
 
 export const Title1= styled.Text `
 color: #57429D;
@@ -62,7 +63,8 @@ font-weight: 500;
 margin-left:${wp('10%')};
 margin-bottom:${hp('3%')};
 width: ${wp('80%')};
-text-align:center;`
+text-align:center;
+font-family: 'Capriola';`
 
 
 export const TextParabens = styled.Text `
@@ -72,7 +74,8 @@ export const TextParabens = styled.Text `
     margin-left:${wp('15%')};
     width: ${wp('70%')};
     text-align:center;
-    margin-bottom:${hp('3%')};`
+    margin-bottom:${hp('3%')};
+    font-family: 'Capriola';`
 
 export const Area = styled.View `
     width: ${wp('60%')};
@@ -89,6 +92,7 @@ export const Comunicado = styled.Text `
     font-size: 1.1em;
     font-weight: 500;
     text-align:left;
+    font-family: 'Capriola';
     `
 
 export const Lado = styled.View`
@@ -120,6 +124,7 @@ export const Info = styled.Text `
     color: #fff;
     font-size: 1.3em;
     font-weight: 700;
+    font-family: 'Capriola';
     `
     
 export const Info1 = styled.Text `
@@ -127,6 +132,7 @@ export const Info1 = styled.Text `
     color: #000;
     font-size: 1.3em;
     font-weight: 400;
+    font-family: 'Capriola';
     `
 
 

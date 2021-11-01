@@ -41,7 +41,7 @@ const avali =[
 
 export default function Avaliacao(){
     
-    
+      const navigation = useNavigation();
     
     return (
         <Background>
@@ -52,8 +52,8 @@ export default function Avaliacao(){
                 <View>
                     <Logo source={require('../../../assets/logo.png')}></Logo>
                 </View>
-                <BotaoSair>
-                <RiLogoutBoxRLine name="back" size={30} color="#57429D" onPress={() => navigation.goBack()}/>
+                <BotaoSair onPress={() => navigation.navigate('Presentation')}>
+                <RiLogoutBoxRLine name="back" size={30} color="#57429D" />
                 </BotaoSair>
             </Cabecalho>
             <Corpo>

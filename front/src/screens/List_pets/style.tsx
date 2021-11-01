@@ -6,7 +6,7 @@ export const BackGroundHome = styled.View `
     background-color:#E5E5E5;
     width: ${wp('100%')};
     height: ${hp('100%')};
-    font-family: Signika;`
+    font-family: 'Capriola';`
 
 export const Back1 = styled.View `
     background-color:#e5e5e5;
@@ -87,7 +87,8 @@ export const ImgPet = styled.Image`
     export const TextCard = styled.Text `
     color: #ffff;
     font-size: 1.3em;
-    font-weight: 500;`
+    font-weight: 500;
+    font-family: 'Capriola';`
 
 
 

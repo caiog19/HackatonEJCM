@@ -68,7 +68,7 @@ export default function Login(){
 
             <View style={{marginTop:'20%'}}>
 
-                <PurpleButton title={'Entrar'} handleOnPress={()=>navigation.navigate('Informations')}></PurpleButton>
+                <PurpleButton title={'Entrar'} handleOnPress={()=>navigation.navigate('TabBar')}></PurpleButton>
 
             </View>
 
